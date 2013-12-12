@@ -1,6 +1,8 @@
 # ShlispTools
 
-Tools for shlisp/shnth developers. If you don't recognize both of words starting with "sh", this is probably not for you.
+[![Gem Version](https://badge.fury.io/rb/shlisp_tools.png)](http://badge.fury.io/rb/shlisp_tools)
+
+Tools for shlisp/shnth developers. If you don't recognize both words starting with "sh", this is probably not for you.
 
 Executables:
 * shlerb (a templating and uploading tool for txts; an ERB wrapper for shlisp)
