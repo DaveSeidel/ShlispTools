@@ -12,7 +12,7 @@ Classes/Modules:
 * ShlispTools::Scales   # tiny collection of predefined scales
 * ShlispTools::Shnth    # useful constants and macros for Shnth things
 
-Example shlerb code
+Shlerb code samples in examples directory.
 
 Shlisp & Shnth come from Sbobo - http://shbobo.net
 
