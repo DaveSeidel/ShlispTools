@@ -24,7 +24,7 @@ class Shlerb
     begin
       out = herb(template_file)
     rescue Exception => e
-      # do again and show verbos output
+      # do again and show verbose output
       $VERBOSE = true
       puts herb(template_file)
       exit 1
