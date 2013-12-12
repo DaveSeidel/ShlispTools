@@ -97,6 +97,17 @@ You can also define your own scales and add a scaling factor to bring them into 
         R::Ratio.new( 2,  1)
       ]).scale(100)
 
+      # get nume and deno for a given scale degree, using indexes 0 through 5 for a six-note scale
+      #   1/1:
+      #   myMetaSlendro[0].nume
+      #   myMetaSlendro[0].deno
+      #
+      #   37/32
+      #   myMetaSlendro[1].nume
+      #   myMetaSlendro[1].deno
+      #
+      #   ... 
+
     %>
 
 ## Contributing
