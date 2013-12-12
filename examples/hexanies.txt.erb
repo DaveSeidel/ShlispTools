@@ -1,0 +1,103 @@
+<%
+  Slew_mul = 5
+  Slew_add = 5
+  Modo_mul = 2
+%>
+<% s = Scales::Hexany1357.scale(127) %>
+{
+  <%= Shnth::Situation_1 %>
+
+  ; 60Hz-ish
+  (srate (short 36 79))
+
+  (arab
+
+    (pan
+      (add
+        (modo (horna <%= s[Shnth::Bar_A].n %> <%= s[Shnth::Bar_A].d %> (slewa (majora) <%= Slew_mul %> <%= Slew_add %>)) <%= Modo_mul %>)
+        (modo (hornc <%= s[Shnth::Bar_C].n %> <%= s[Shnth::Bar_C].d %> (slewc (majorc) <%= Slew_mul %> <%= Slew_add %>)) <%= Modo_mul %>)
+        (modo (horne <%= s[Shnth::Bar_d].n %> <%= s[Shnth::Bar_d].d %> (slewe (minord) <%= Slew_mul %> <%= Slew_add %>)) <%= Modo_mul %>)
+        (modo (horng <%= s[Shnth::Bar_b].n %> <%= s[Shnth::Bar_b].d %> (slewg (minorb) <%= Slew_mul %> <%= Slew_add %>)) <%= Modo_mul %>)
+      )
+      80
+    )
+
+    (pan
+      (add
+        (modo (hornb <%= s[Shnth::Bar_B].n %> <%= s[Shnth::Bar_B].d %> (slewb (majorb) <%= Slew_mul %> <%= Slew_add %>)) <%= Modo_mul %>)
+        (modo (hornd <%= s[Shnth::Bar_D].n %> <%= s[Shnth::Bar_D].d %> (slewd (majord) <%= Slew_mul %> <%= Slew_add %>)) <%= Modo_mul %>)
+        (modo (hornf <%= s[Shnth::Bar_c].n %> <%= s[Shnth::Bar_c].d %> (slewf (minorc) <%= Slew_mul %> <%= Slew_add %>)) <%= Modo_mul %>)
+        (modo (hornh <%= s[Shnth::Bar_a].n %> <%= s[Shnth::Bar_a].d %> (slewh (minora) <%= Slew_mul %> <%= Slew_add %>)) <%= Modo_mul %>)
+      )
+      144
+    )
+
+  )
+}
+
+{
+  <%= Shnth::Situation_2 %>
+
+  ; 60Hz-ish
+  (srate (short 72 79))
+
+  (arab
+
+    (corpb 60 60)
+
+    (pan
+      (comba
+        (add
+          (modo (sawa  <%= s[Shnth::Bar_A].n %> <%= s[Shnth::Bar_A].d %> (slewa (majora) <%= Slew_mul %> <%= Slew_add %>)) <%= Modo_mul %>)
+          (modo (sawc  <%= s[Shnth::Bar_C].n %> <%= s[Shnth::Bar_C].d %> (slewc (majorc) <%= Slew_mul %> <%= Slew_add %>)) <%= Modo_mul %>)
+          (modo (sawe  <%= s[Shnth::Bar_d].n %> <%= s[Shnth::Bar_d].d %> (slewe (minord) <%= Slew_mul %> <%= Slew_add %>)) <%= Modo_mul %>)
+          (modo (sawg  <%= s[Shnth::Bar_b].n %> <%= s[Shnth::Bar_b].d %> (slewg (minorb) <%= Slew_mul %> <%= Slew_add %>)) <%= Modo_mul %>)
+        )
+        120 (corpb) 100
+      )
+      80
+    )
+
+    (pan
+      (combb
+        (add
+          (modo (sawb <%= s[Shnth::Bar_B].n %> <%= s[Shnth::Bar_B].d %> (slewb (majorb) <%= Slew_mul %> <%= Slew_add %>)) <%= Modo_mul %>)
+          (modo (sawd <%= s[Shnth::Bar_D].n %> <%= s[Shnth::Bar_D].d %> (slewd (majord) <%= Slew_mul %> <%= Slew_add %>)) <%= Modo_mul %>)
+          (modo (sawf <%= s[Shnth::Bar_c].n %> <%= s[Shnth::Bar_c].d %> (slewf (minorc) <%= Slew_mul %> <%= Slew_add %>)) <%= Modo_mul %>)
+          (modo (sawh <%= s[Shnth::Bar_a].n %> <%= s[Shnth::Bar_a].d %> (slewh (minora) <%= Slew_mul %> <%= Slew_add %>)) <%= Modo_mul %>)
+        )
+        120 (corpb) 100
+      )
+      144
+    )
+
+  )
+
+}
+
+{
+  <%= Shnth::Situation_3 %>
+
+  (left
+    (waveb
+      (add
+        (modo (sawa 20 60 (saucec 56 (slewa (bara) 8 24))) 2)
+        (modo (sawb 30 60 (sauced 60 (slewb (barb) 8 24))) 2)
+      )
+      24
+      (corp 10 60)
+    )
+  )
+
+  (right
+    (wavec
+      (add
+        (modo (sawc 40 60 (saucee 70 (slewc (barc) 8 24))) 2)
+        (modo (sawd 80 60 (saucef 64 (slewd (bard) 8 24))) 2)
+      )
+      24
+      (corpb 10 60)
+    )
+  )
+
+}

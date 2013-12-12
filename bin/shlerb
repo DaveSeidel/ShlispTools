@@ -1,0 +1,47 @@
+#!/usr/bin/env ruby
+
+require 'erb'
+
+require 'shlisp_tools'
+
+# for the binding
+Scales = ShlispTools::Scales
+Shnth  = ShlispTools::Shnth
+
+def error(s)
+  puts s
+  exit 1
+end
+
+class Shlerb
+
+  TEMP_FILE = "_shlerb_temp"
+  
+  def self.perform(infile)
+    template_file = File.open(infile, 'r').read
+    out = nil
+
+    begin
+      out = herb(template_file)
+    rescue Exception => e
+      # do again and show verbos output
+      $VERBOSE = true
+      puts herb(template_file)
+      exit 1
+    end
+
+    if out
+      File.open(TEMP_FILE, 'w+') { |f| f.write(out) }
+      system("shlisp #{TEMP_FILE}")
+    end
+  end
+
+  private
+    def self.herb(tmpl)
+      ERB.new(tmpl, nil, ">").result(binding)
+    end
+
+end
+
+error "usage: shlerb FILENAME" if ARGV.length < 1
+Shlerb.perform(ARGV[0])

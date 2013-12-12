@@ -1,0 +1,5 @@
+require 'shlisp_tools/version'
+require 'shlisp_tools/ratio'
+require 'shlisp_tools/scale'
+require 'shlisp_tools/scales'
+require 'shlisp_tools/shnth'
