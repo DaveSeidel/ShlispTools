@@ -112,6 +112,16 @@ You can also define your own scales and add a scaling factor to bring them into 
 
     %>
 
+## Caveats
+
+* Ratio, Scale, and the Scales collection all assume "arab" mode.
+
+##  TODO
+
+* write tests
+* write more complete documentation
+* allow Ratio and Scale classes to work in "dirac" mode as well as "arab" mode
+
 ## Contributing
 
 1. Fork it
