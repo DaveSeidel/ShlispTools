@@ -1,6 +1,8 @@
 require 'shlisp_tools/scale'
 
 module ShlispTools
+
+  # Predefined scales.
   module Scales
 
     # 1-3-5-7 hexany, utonal stellated
@@ -48,4 +50,5 @@ module ShlispTools
     ])
 
   end
+
 end

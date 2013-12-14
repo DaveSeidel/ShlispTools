@@ -4,7 +4,7 @@
 # ops
 #------------------------------------------------------------------------------
 
-class OpResult #:nodoc:
+class OpResult #:nodoc: all
   attr_reader :args, :result
 
   def initialize(args=nil, result=nil)
@@ -18,7 +18,7 @@ class OpResult #:nodoc:
 end
 
 # base class for operations
-class Op #:nodoc:
+class Op #:nodoc: all
   def self.name
     ""
   end
@@ -49,7 +49,7 @@ end
 
 # operations
 
-class OpSr < Op #:nodoc:
+class OpSr < Op #:nodoc: all
   CLOCK = 72000000.0
 
   def self.name
@@ -82,7 +82,7 @@ class OpSr < Op #:nodoc:
     end
 end
 
-class OpRatMul < Op #:nodoc:
+class OpRatMul < Op #:nodoc: all
   def self.name
     "mul"
   end
@@ -118,7 +118,7 @@ class OpRatMul < Op #:nodoc:
     end
 end
 
-class OpRange < Op #:nodoc:
+class OpRange < Op #:nodoc: all
   Min = -128
   Max = 128
 
@@ -154,7 +154,7 @@ class OpRange < Op #:nodoc:
     end
 end
 
-class OpReduce < Op #:nodoc:
+class OpReduce < Op #:nodoc: all
   def self.name
     "reduce"
   end

@@ -3,16 +3,16 @@
 require 'erb'
 require 'shlisp_tools'
 
-#:nodoc:
-Scales = ShlispTools::Scales  #:nodoc:
-Shnth  = ShlispTools::Shnth   #:nodoc:
+#:nodoc: all
+Scales = ShlispTools::Scales
+Shnth  = ShlispTools::Shnth
 
 def error(s) #:nodoc:
   puts s
   exit 1
 end
 
-class Shlerb #:nodoc:
+class Shlerb #:nodoc: all
   TEMP_FILE = "_shlerb_temp"
   
   def self.perform(infile)
