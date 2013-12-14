@@ -19,6 +19,7 @@ class Shlerb #:nodoc: all
     template_file = File.open(infile, 'r').read
     out = nil
 
+    puts "Generating shlisp..."
     begin
       out = herb(template_file)
     rescue Exception => e
@@ -29,6 +30,7 @@ class Shlerb #:nodoc: all
     end
 
     if out
+      puts "Compiling generated shlisp (#{TEMP_FILE}) and sending to shnth..."
       File.open(TEMP_FILE, 'w+') { |f| f.write(out) }
       system("shlisp #{TEMP_FILE}")
     end
