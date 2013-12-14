@@ -1,20 +1,18 @@
 #!/usr/bin/env ruby
 
 require 'erb'
-
 require 'shlisp_tools'
 
-# for the binding
-Scales = ShlispTools::Scales
-Shnth  = ShlispTools::Shnth
+#:nodoc:
+Scales = ShlispTools::Scales  #:nodoc:
+Shnth  = ShlispTools::Shnth   #:nodoc:
 
-def error(s)
+def error(s) #:nodoc:
   puts s
   exit 1
 end
 
-class Shlerb
-
+class Shlerb #:nodoc:
   TEMP_FILE = "_shlerb_temp"
   
   def self.perform(infile)

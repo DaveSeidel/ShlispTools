@@ -4,7 +4,7 @@
 # ops
 #------------------------------------------------------------------------------
 
-class OpResult
+class OpResult #:nodoc:
   attr_reader :args, :result
 
   def initialize(args=nil, result=nil)
@@ -18,7 +18,7 @@ class OpResult
 end
 
 # base class for operations
-class Op
+class Op #:nodoc:
   def self.name
     ""
   end
@@ -49,7 +49,7 @@ end
 
 # operations
 
-class OpSr < Op
+class OpSr < Op #:nodoc:
   CLOCK = 72000000.0
 
   def self.name
@@ -82,7 +82,7 @@ class OpSr < Op
     end
 end
 
-class OpRatMul < Op
+class OpRatMul < Op #:nodoc:
   def self.name
     "mul"
   end
@@ -118,7 +118,7 @@ class OpRatMul < Op
     end
 end
 
-class OpRange < Op
+class OpRange < Op #:nodoc:
   Min = -128
   Max = 128
 
@@ -154,7 +154,7 @@ class OpRange < Op
     end
 end
 
-class OpReduce < Op
+class OpReduce < Op #:nodoc:
   def self.name
     "reduce"
   end
@@ -192,20 +192,20 @@ class OpReduce < Op
 end
 
 # known operations
-Ops = [ OpSr, OpRatMul, OpRange, OpReduce ]
+Ops = [ OpSr, OpRatMul, OpRange, OpReduce ] #:nodoc:
 
 #------------------------------------------------------------------------------
 # mainline code
 #------------------------------------------------------------------------------
 
-def usage
+def usage #:nodoc:
   puts "usage: 'shtool OP [args ...]'"
   puts "where OP is one of: #{Ops.collect{ |op| op.name}.join(" ") }"
   puts "or try 'shtool help'"
   exit 1
 end
 
-def main(argv)
+def main(argv) #:nodoc:
   if argv.length < 1
     usage
   else

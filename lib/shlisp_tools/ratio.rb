@@ -1,4 +1,7 @@
 module ShlispTools
+
+  # a Shlisp-oriented representation of a pitch in just/rational intonation;
+  # all terms 0 <= n <= 256
   class Ratio
     include Enumerable
 
@@ -78,4 +81,5 @@ module ShlispTools
         @rat = Rational(@nume, @deno)
       end
   end
+
 end
