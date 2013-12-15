@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>README - Shlerb and ShlispTools</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body class="file">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  
+<div id="table-of-contents">
+  <nav class="section">
+    <h3 class="section-header">Table of Contents</h3>
+    <ul>
+      <li><a href="#label-Shlerb+and+ShlispTools">Shlerb and ShlispTools</a>
+      <li><a href="#label-Installation">Installation</a>
+      <li><a href="#label-Shlerb">Shlerb</a>
+      <li><a href="#label-Usage">Usage</a>
+      <li><a href="#label-Examples">Examples</a>
+      <li><a href="#label-Shtool">Shtool</a>
+      <li><a href="#label-Usage">Usage</a>
+      <li><a href="#label-Caveats">Caveats</a>
+      <li><a href="#label-TODO">TODO</a>
+      <li><a href="#label-Contributing">Contributing</a>
+    </ul>
+  </nav>
+</div>
+
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./LICENSE_txt.html">LICENSE</a>
+  
+    <li class="file"><a href="./README_md.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./ShlispTools.html">ShlispTools</a>
+  
+    <li><a href="./ShlispTools/Ratio.html">ShlispTools::Ratio</a>
+  
+    <li><a href="./ShlispTools/Scale.html">ShlispTools::Scale</a>
+  
+    <li><a href="./ShlispTools/Scales.html">ShlispTools::Scales</a>
+  
+    <li><a href="./ShlispTools/Shnth.html">ShlispTools::Shnth</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation" class="description">
+  
+<h1 id="label-Shlerb+and+ShlispTools">Shlerb and <a href="ShlispTools.html">ShlispTools</a><span><a href="#label-Shlerb+and+ShlispTools">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+
+<p><img src="https://badge.fury.io/rb/shlisp_tools.png" />]</p>
+
+<p>Tools for Shlisp/Shnth developers. If you don’t recognize both words
+starting with “Sh”, this is probably not for you.</p>
+
+<p>Online documentation:</p>
+<ul><li>
+<p><a
+href="http://daveseidel.github.io/ShlispTools">daveseidel.github.io/ShlispTools</a></p>
+</li></ul>
+
+<p>Executables:</p>
+<ul><li>
+<p>shlerb (a templating and uploading tool for txts; an ERB wrapper for
+shlisp)</p>
+</li><li>
+<p>shtool (a collection of little calculations)</p>
+</li></ul>
+
+<p>Classes/Modules:</p>
+<ul><li>
+<p><a href="ShlispTools/Ratio.html">ShlispTools::Ratio</a> : represents a
+pitch ratio</p>
+</li><li>
+<p><a href="ShlispTools/Scales.html">ShlispTools::Scales</a> : represents a
+scale (consisting of Ratios)</p>
+</li><li>
+<p><a href="ShlispTools/Scales.html">ShlispTools::Scales</a> : tiny collection
+of predefined scales</p>
+</li><li>
+<p><a href="ShlispTools/Shnth.html">ShlispTools::Shnth</a> : useful constants
+and macros for Shnth things</p>
+</li></ul>
+
+<p>Shlerb code examples:</p>
+<ul><li>
+<p>in the examples directory</p>
+</li><li>
+<p>online: <a
+href="https://github.com/DaveSeidel/ShlispTools/tree/master/examples">github.com/DaveSeidel/ShlispTools/tree/master/examples</a></p>
+</li></ul>
+
+<p>Shlisp &amp; Shnth come from Sbobo - <a
+href="http://shbobo.net">shbobo.net</a></p>
+
+<h2 id="label-Installation">Installation<span><a href="#label-Installation">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<p>Add this line to your application’s Gemfile:</p>
+
+<pre>gem 'shlisp_tools'</pre>
+
+<p>And then execute:</p>
+
+<pre>$ bundle</pre>
+
+<p>Or install it yourself as:</p>
+
+<pre>$ gem install shlisp_tools</pre>
+
+<h2 id="label-Shlerb">Shlerb<span><a href="#label-Shlerb">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<p>Shlerb is a command-line program that generates Shlisp code from a template
+file and uploads it to a Shnth, assuming that you have one attached to your
+computer, and that you have the “shlisp” program (from <a
+href="http://shbobo.net">shbobo.net</a>) on your path. If there are errors
+translating the file, the error is displayed and nothing is uploaded.</p>
+
+<p>Shlerb template files are just shlisp source files (“txts”) with optional
+sections of Ruby code that start with “&lt;%” or “&lt;%=” and end with
+“%&gt;”. Sections that start with “&lt;%” are simply evaluated as Ruby code
+and are used to set variables or constants or do some other processing.
+Section that begin with “&lt;%=” are also evaulated as Ruby code, but the
+output is printed and is thus useful for generating shlisp code.</p>
+
+<h3 id="label-Usage">Usage<span><a href="#label-Usage">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+
+<p><code>shlerb FILENAME</code></p>
+
+<p>where FILENAME is something like <code>cool_shnth_patches.txt.erb</code> or
+<code>cool_shnth_patches.shlerb</code>. The contents of the file should be
+shlisp code with optional ERB sections containing Ruby code. (For more
+information on ERB, see <a
+href="https://en.wikipedia.org/wiki/ERuby">en.wikipedia.org/wiki/ERuby</a>).
+The Ruby code has access to the modules and classes mentioned above.</p>
+
+<h3 id="label-Examples">Examples<span><a href="#label-Examples">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+
+<p>Here’s an example of a shlerb file with a single situation. It plays a
+six-note meta-slendro scale on the keys in the order majora, majorb,
+majorc, majord, minord, minorc. The tones fade in slowly and will tend to
+(intentionally) distort as they reach full amplitude. The scale used is
+part of the collection of pre-defined scales that come with <a
+href="ShlispTools.html">ShlispTools</a>.</p>
+
+<pre>&lt;%
+  Slew_mul = 5
+  Slew_add = 5
+  Modo_mul = 2
+%&gt;
+&lt;% s1 = Scales::MetaSlendro_1.mul(120) %&gt; 
+{
+  &lt;%= Shnth::Situation_1 %&gt;
+
+  ; 60Hz-ish
+  (srate (short 72 79))
+
+  (arab
+
+    (pan
+      (add
+        (modo (horna &lt;%= s1[Shnth::Bar_A].n %&gt; &lt;%= s1[Shnth::Bar_A].d %&gt; (slewa (majora) &lt;%= Slew_mul %&gt; &lt;%= Slew_add %&gt;)) &lt;%= Modo_mul %&gt;)
+        (modo (hornc &lt;%= s1[Shnth::Bar_C].n %&gt; &lt;%= s1[Shnth::Bar_C].d %&gt; (slewc (majorc) &lt;%= Slew_mul %&gt; &lt;%= Slew_add %&gt;)) &lt;%= Modo_mul %&gt;)
+        (modo (horne &lt;%= s1[Shnth::Bar_d].n %&gt; &lt;%= s1[Shnth::Bar_d].d %&gt; (slewe (minord) &lt;%= Slew_mul %&gt; &lt;%= Slew_add %&gt;)) &lt;%= Modo_mul %&gt;)
+      )
+      144
+    )
+
+    (pan
+      (add
+        (modo (hornb &lt;%= s1[Shnth::Bar_B].n %&gt; &lt;%= s1[Shnth::Bar_B].d %&gt; (slewb (majorb) &lt;%= Slew_mul %&gt; &lt;%= Slew_add %&gt;)) &lt;%= Modo_mul %&gt;)
+        (modo (hornd &lt;%= s1[Shnth::Bar_D].n %&gt; &lt;%= s1[Shnth::Bar_D].d %&gt; (slewd (majord) &lt;%= Slew_mul %&gt; &lt;%= Slew_add %&gt;)) &lt;%= Modo_mul %&gt;)
+        (modo (hornf &lt;%= s1[Shnth::Bar_c].n %&gt; &lt;%= s1[Shnth::Bar_c].d %&gt; (slewf (minorc) &lt;%= Slew_mul %&gt; &lt;%= Slew_add %&gt;)) &lt;%= Modo_mul %&gt;)
+      )
+      80
+    )
+
+  )
+}</pre>
+
+<p>You can also define your own scales and add a scaling factor to bring them
+into the right range for your srate.</p>
+
+<pre>&lt;%
+
+  # shortcuts for long names
+  S = ShlispTools::Scale
+  R = ShlispTools::Ratio
+
+  # define scale with 1/1 = 100 100
+  myMetaSlendro = S::Scale.new([
+    R::Ratio.new( 1,  1),
+    R::Ratio.new(37, 32),
+    R::Ratio.new(21, 16),
+    R::Ratio.new(49, 32),
+    R::Ratio.new( 7,  4),
+    R::Ratio.new( 2,  1)
+  ]).mul(100)
+
+  # get nume and deno for a given scale degree, using indexes 0 through 5 for a six-note scale
+  #   1/1:
+  #   myMetaSlendro[0].nume
+  #   myMetaSlendro[0].deno
+  #
+  #   37/32
+  #   myMetaSlendro[1].nume
+  #   myMetaSlendro[1].deno
+  #
+  #   ... 
+
+%&gt;</pre>
+
+<h2 id="label-Shtool">Shtool<span><a href="#label-Shtool">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<p>Shtool is a command-line program that collects together a few useful
+calculations.</p>
+
+<h3 id="label-Usage">Usage<span><a href="#label-Usage">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+
+<p><code>shtool [[OPERATION] args ...]</code></p>
+
+<p>Use <code>shtool help</code> for a list of the current set of operations
+and what they do. For help with any operation, use <code>shtool
+OPERATION_NAME</code> to see what arguments ar expected.</p>
+
+<h2 id="label-Caveats">Caveats<span><a href="#label-Caveats">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<ul><li>
+<p>Ratio, Scale, and the Scales collection all assume “arab” mode.</p>
+</li></ul>
+
+<h2 id="label-TODO">TODO<span><a href="#label-TODO">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<ul><li>
+<p>write tests</p>
+</li><li>
+<p>write more complete documentation</p>
+</li><li>
+<p>allow Ratio and Scale classes to work in “dirac” mode as well as “arab”
+mode</p>
+</li></ul>
+
+<h2 id="label-Contributing">Contributing<span><a href="#label-Contributing">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<ol><li>
+<p>Fork it</p>
+</li><li>
+<p>Create your feature branch (<code>git checkout -b my-new-feature</code>)</p>
+</li><li>
+<p>Commit your changes (<code>git commit -am 'Add some feature'</code>)</p>
+</li><li>
+<p>Push to the branch (<code>git push origin my-new-feature</code>)</p>
+</li><li>
+<p>Create new Pull Request</p>
+</li></ol>
+
+</div>
+
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.1.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

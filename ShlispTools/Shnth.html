@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module ShlispTools::Shnth - Shlerb and ShlispTools</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/shlisp_tools/shnth.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    
+    
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../LICENSE_txt.html">LICENSE</a>
+  
+    <li class="file"><a href="../README_md.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../ShlispTools.html">ShlispTools</a>
+  
+    <li><a href="../ShlispTools/Ratio.html">ShlispTools::Ratio</a>
+  
+    <li><a href="../ShlispTools/Scale.html">ShlispTools::Scale</a>
+  
+    <li><a href="../ShlispTools/Scales.html">ShlispTools::Scales</a>
+  
+    <li><a href="../ShlispTools/Shnth.html">ShlispTools::Shnth</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module ShlispTools::Shnth</h1>
+
+  <div id="description" class="description">
+    
+<p>Macros and constants for use with the shlerb tool.</p>
+
+<p><strong>Light_</strong>*: simple light values, 1-8 across</p>
+
+<p><strong>Situation_</strong>*: macros representing stevek's idiom for
+switching through situations using the tar button, using the lights from
+left to right to show which situation is running:</p>
+<ul><li>
+<p><code>&lt;%= Situation_1 %&gt;</code> emits <code>(jump (tar 1)) (lights
+1)</code></p>
+</li><li>
+<p><code>&lt;%= Situation_2 %&gt;</code> emits <code>(jump (tar 1)) (lights
+4)</code></p>
+</li><li>
+<p>etc.</p>
+</li></ul>
+
+<p><strong>Bar_</strong>*: scale indexes by bar (Uppercase=major,
+lowercase=minor), using stevek's arrangement:</p>
+<ul><li>
+<p><code>Bar_A = 0</code></p>
+</li><li>
+<p><code>Bar_B = 1</code></p>
+</li><li>
+<p>etc.</p>
+</li></ul>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="Bar_A">Bar_A
+        
+        <dd class="description">
+        
+      
+        <dt id="Bar_B">Bar_B
+        
+        <dd class="description">
+        
+      
+        <dt id="Bar_C">Bar_C
+        
+        <dd class="description">
+        
+      
+        <dt id="Bar_D">Bar_D
+        
+        <dd class="description">
+        
+      
+        <dt id="Bar_a">Bar_a
+        
+        <dd class="description">
+        
+      
+        <dt id="Bar_b">Bar_b
+        
+        <dd class="description">
+        
+      
+        <dt id="Bar_c">Bar_c
+        
+        <dd class="description">
+        
+      
+        <dt id="Bar_d">Bar_d
+        
+        <dd class="description">
+        
+      
+        <dt id="Light_1">Light_1
+        
+        <dd class="description">
+        
+      
+        <dt id="Light_2">Light_2
+        
+        <dd class="description">
+        
+      
+        <dt id="Light_3">Light_3
+        
+        <dd class="description">
+        
+      
+        <dt id="Light_4">Light_4
+        
+        <dd class="description">
+        
+      
+        <dt id="Light_5">Light_5
+        
+        <dd class="description">
+        
+      
+        <dt id="Light_6">Light_6
+        
+        <dd class="description">
+        
+      
+        <dt id="Light_7">Light_7
+        
+        <dd class="description">
+        
+      
+        <dt id="Light_8">Light_8
+        
+        <dd class="description">
+        
+      
+        <dt id="Situation_1">Situation_1
+        
+        <dd class="description">
+        
+      
+        <dt id="Situation_2">Situation_2
+        
+        <dd class="description">
+        
+      
+        <dt id="Situation_3">Situation_3
+        
+        <dd class="description">
+        
+      
+        <dt id="Situation_4">Situation_4
+        
+        <dd class="description">
+        
+      
+        <dt id="Situation_5">Situation_5
+        
+        <dd class="description">
+        
+      
+        <dt id="Situation_6">Situation_6
+        
+        <dd class="description">
+        
+      
+        <dt id="Situation_7">Situation_7
+        
+        <dd class="description">
+        
+      
+        <dt id="Situation_8">Situation_8
+        
+        <dd class="description">
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    <!-- Methods -->
+    
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.1.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+
