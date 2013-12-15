@@ -1,20 +1,29 @@
-# ShlispTools
+# Shlerb and ShlispTools
 
 [![Gem Version](https://badge.fury.io/rb/shlisp_tools.png)](http://badge.fury.io/rb/shlisp_tools)
 
-Tools for shlisp/shnth developers. If you don't recognize both words starting with "sh", this is probably not for you.
+Tools for Shlisp/Shnth developers. If you don't recognize both words starting with "Sh", this is probably not for you.
+
+Online documentation:
+
+- http://daveseidel.github.io/ShlispTools
 
 Executables:
-* shlerb (a templating and uploading tool for txts; an ERB wrapper for shlisp)
-* shtool (a collection of little calculations)
+
+- shlerb (a templating and uploading tool for txts; an ERB wrapper for shlisp)
+- shtool (a collection of little calculations)
 
 Classes/Modules:
-* ShlispTools::Ratio    # represents a pitch ratio
-* ShlispTools::Scales   # represents a scale (consisting of Ratios)
-* ShlispTools::Scales   # tiny collection of predefined scales
-* ShlispTools::Shnth    # useful constants and macros for Shnth things
 
-Shlerb code samples in examples directory.
+- ShlispTools::Ratio : represents a pitch ratio
+- ShlispTools::Scales : represents a scale (consisting of Ratios)
+- ShlispTools::Scales : tiny collection of predefined scales
+- ShlispTools::Shnth  : useful constants and macros for Shnth things
+
+Shlerb code examples:
+
+- in the examples directory
+- online: https://github.com/DaveSeidel/ShlispTools/tree/master/examples
 
 Shlisp & Shnth come from Sbobo - http://shbobo.net
 
@@ -32,17 +41,19 @@ Or install it yourself as:
 
     $ gem install shlisp_tools
 
-## Usage
+## Shlerb
 
-Shlerb usage:
+Shlerb is a command-line program that generates Shlisp code from a template file and uploads it to a Shnth, assuming that you have one attached to your computer, and that you have the "shlisp" program (from http://shbobo.net) on your path. If there are errors translating the file, the error is displayed and nothing is uploaded.
 
-    shlerb FILENAME
+Shlerb template files are just shlisp source files ("txts")  with optional sections of Ruby code that start with "<%" or "<%=" and end with "%>". Sections that start with "<%" are simply evaluated as Ruby code and are used to set variables or constants or do some other processing. Section that begin with "<%=" are also evaulated as Ruby code, but the output is printed and is thus useful for generating shlisp code.
 
-where FILENAME is something like cool_shnth_patches.txt.erb or cool_shnth_patches.shlerb. The contents of the file should be shlisp code with optional ERB sections containing Ruby code. (For more information on ERB, see https://en.wikipedia.org/wiki/ERuby). The Ruby code has access to the modules and classes mentioned above. More details soon.
+### Usage
 
-What shlerb does: it translates the input file into pure shlisp code and then uploads it to the attached Shnth using the "shlisp" command (from http://shbobo.net). If these are error translating the file, the error is displayed and nothing is uploaded.
+<tt>shlerb FILENAME</tt>
 
-## Examples
+where FILENAME is something like +cool_shnth_patches.txt.erb+ or +cool_shnth_patches.shlerb+. The contents of the file should be shlisp code with optional ERB sections containing Ruby code. (For more information on ERB, see https://en.wikipedia.org/wiki/ERuby). The Ruby code has access to the modules and classes mentioned above.
+
+### Examples
 
 Here's an example of a shlerb file with a single situation. It plays a six-note meta-slendro scale on the keys in the order majora, majorb, majorc, majord, minord, minorc. The tones fade in slowly and will tend to (intentionally) distort as they reach full amplitude. The scale used is part of the collection of pre-defined scales that come with ShlispTools.
 
@@ -51,7 +62,7 @@ Here's an example of a shlerb file with a single situation. It plays a six-note 
       Slew_add = 5
       Modo_mul = 2
     %>
-    <% s1 = Scales::MetaSlendro_1.scale(120) %> 
+    <% s1 = Scales::MetaSlendro_1.mul(120) %> 
     {
       <%= Shnth::Situation_1 %>
 
@@ -97,7 +108,7 @@ You can also define your own scales and add a scaling factor to bring them into 
         R::Ratio.new(49, 32),
         R::Ratio.new( 7,  4),
         R::Ratio.new( 2,  1)
-      ]).scale(100)
+      ]).mul(100)
 
       # get nume and deno for a given scale degree, using indexes 0 through 5 for a six-note scale
       #   1/1:
@@ -112,15 +123,25 @@ You can also define your own scales and add a scaling factor to bring them into 
 
     %>
 
+## Shtool
+
+Shtool is a command-line program that collects together a few useful calculations. 
+
+### Usage
+
+<tt>shtool [[OPERATION] args ...]</tt>
+
+Use <tt>shtool help</tt> for a list of the current set of operations and what they do. For help with any operation, use <tt>shtool OPERATION_NAME</tt> to see what arguments ar expected.
+
 ## Caveats
 
 * Ratio, Scale, and the Scales collection all assume "arab" mode.
 
 ##  TODO
 
-* write tests
-* write more complete documentation
-* allow Ratio and Scale classes to work in "dirac" mode as well as "arab" mode
+- write tests
+- write more complete documentation
+- allow Ratio and Scale classes to work in "dirac" mode as well as "arab" mode
 
 ## Contributing
 
