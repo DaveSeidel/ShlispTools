@@ -1,0 +1,47 @@
+#!/usr/bin/env ruby
+
+require 'erb'
+require 'shlisp_tools'
+
+#:nodoc: all
+Scales = ShlispTools::Scales
+Shnth  = ShlispTools::Shnth
+
+def error(s) #:nodoc:
+  puts s
+  exit 1
+end
+
+class Shlerb #:nodoc: all
+  TEMP_FILE = "_shlerb_temp"
+
+  def self.perform(infile)
+    template_file = File.open(infile, 'r').read
+    out = nil
+
+    puts "Generating shlisp..."
+    begin
+      out = herb(template_file)
+    rescue Exception => e
+      # do again and show verbose output
+      $VERBOSE = true
+      puts herb(template_file)
+      exit 1
+    end
+
+    if out
+      puts "Compiling generated shlisp (#{TEMP_FILE}) and sending to shnth..."
+      File.open(TEMP_FILE, 'w+') { |f| f.write(out) }
+      system("shlisp #{TEMP_FILE}")
+    end
+  end
+
+  private
+    def self.herb(tmpl)
+      ERB.new(tmpl, nil).result(binding)
+    end
+
+end
+
+error "usage: shlerb FILENAME" if ARGV.length < 1
+Shlerb.perform(ARGV[0])
