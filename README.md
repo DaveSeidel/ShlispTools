@@ -37,7 +37,7 @@ And then execute:
 
     $ bundle
 
-Or install it yourself as:
+Or install it manually:
 
     $ gem install shlisp_tools
 
@@ -62,7 +62,7 @@ Here's an example of a shlerb file with a single situation. It plays a six-note 
       Slew_add = 5
       Modo_mul = 2
     %>
-    <% s1 = Scales::MetaSlendro_1.mul(120) %> 
+    <% s1 = Scales::MetaSlendro_1.mul(120) %>
     {
       <%= Shnth::Situation_1 %>
 
@@ -73,18 +73,18 @@ Here's an example of a shlerb file with a single situation. It plays a six-note 
 
         (pan
           (add
-            (modo (horna <%= s1[Shnth::Bar_A].n %> <%= s1[Shnth::Bar_A].d %> (slewa (majora) <%= Slew_mul %> <%= Slew_add %>)) <%= Modo_mul %>)
-            (modo (hornc <%= s1[Shnth::Bar_C].n %> <%= s1[Shnth::Bar_C].d %> (slewc (majorc) <%= Slew_mul %> <%= Slew_add %>)) <%= Modo_mul %>)
-            (modo (horne <%= s1[Shnth::Bar_d].n %> <%= s1[Shnth::Bar_d].d %> (slewe (minord) <%= Slew_mul %> <%= Slew_add %>)) <%= Modo_mul %>)
+            (modo (horna <%= s1[Shnth::But_A].n %> <%= s1[Shnth::But_A].d %> (slewa (majora) <%= Slew_mul %> <%= Slew_add %>)) <%= Modo_mul %>)
+            (modo (hornc <%= s1[Shnth::But_C].n %> <%= s1[Shnth::But_C].d %> (slewc (majorc) <%= Slew_mul %> <%= Slew_add %>)) <%= Modo_mul %>)
+            (modo (horne <%= s1[Shnth::But_d].n %> <%= s1[Shnth::But_d].d %> (slewe (minord) <%= Slew_mul %> <%= Slew_add %>)) <%= Modo_mul %>)
           )
           144
         )
 
         (pan
           (add
-            (modo (hornb <%= s1[Shnth::Bar_B].n %> <%= s1[Shnth::Bar_B].d %> (slewb (majorb) <%= Slew_mul %> <%= Slew_add %>)) <%= Modo_mul %>)
-            (modo (hornd <%= s1[Shnth::Bar_D].n %> <%= s1[Shnth::Bar_D].d %> (slewd (majord) <%= Slew_mul %> <%= Slew_add %>)) <%= Modo_mul %>)
-            (modo (hornf <%= s1[Shnth::Bar_c].n %> <%= s1[Shnth::Bar_c].d %> (slewf (minorc) <%= Slew_mul %> <%= Slew_add %>)) <%= Modo_mul %>)
+            (modo (hornb <%= s1[Shnth::But_B].n %> <%= s1[Shnth::But_B].d %> (slewb (majorb) <%= Slew_mul %> <%= Slew_add %>)) <%= Modo_mul %>)
+            (modo (hornd <%= s1[Shnth::But_D].n %> <%= s1[Shnth::But_D].d %> (slewd (majord) <%= Slew_mul %> <%= Slew_add %>)) <%= Modo_mul %>)
+            (modo (hornf <%= s1[Shnth::But_c].n %> <%= s1[Shnth::But_c].d %> (slewf (minorc) <%= Slew_mul %> <%= Slew_add %>)) <%= Modo_mul %>)
           )
           80
         )
@@ -101,14 +101,7 @@ You can also define your own scales and add a scaling factor to bring them into 
       R = ShlispTools::Ratio
 
       # define scale with 1/1 = 100 100
-      myMetaSlendro = S::Scale.new([
-        R::Ratio.new( 1,  1),
-        R::Ratio.new(37, 32),
-        R::Ratio.new(21, 16),
-        R::Ratio.new(49, 32),
-        R::Ratio.new( 7,  4),
-        R::Ratio.new( 2,  1)
-      ]).mul(100)
+      myMetaSlendro = S::Scale.new(%w[ 1/1 37/32 21/16 49/32 7/4 2/1 ]).mul(100)
 
       # get nume and deno for a given scale degree, using indexes 0 through 5 for a six-note scale
       #   1/1:
@@ -119,13 +112,13 @@ You can also define your own scales and add a scaling factor to bring them into 
       #   myMetaSlendro[1].nume
       #   myMetaSlendro[1].deno
       #
-      #   ... 
+      #   ...
 
     %>
 
 ## Shtool
 
-Shtool is a command-line program that collects together a few useful calculations. 
+Shtool is a command-line program that collects together a few useful calculations.
 
 ### Usage
 
@@ -136,6 +129,19 @@ Use <tt>shtool help</tt> for a list of the current set of operations and what th
 ## Caveats
 
 * Ratio, Scale, and the Scales collection all assume "arab" mode.
+
+## Version History
+
+### 0.0.1 through 0.0.3
+
+- details lost in the mists of time
+
+### 0.0.4
+
+- shlerb: don't generate extra lines in output
+- Scales may now be written out as a list of ratios (e.g. "7/4"), which is hopefully a lot more intuitive as well as more succinct. The ratios must be inside "%w[]" delimiters and separated by spaces or tabs (see example above). All predefined scales are now written in this format.
+- Shnth module: fixed Light_* macros to work properly; rename Bar_* to But_* because they are for buttons and not for bars (d'oh!); add "situ" which I am too lazy to document at the moment.
+- Examples: various changes.
 
 ##  TODO
 

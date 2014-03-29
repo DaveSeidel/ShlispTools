@@ -14,7 +14,7 @@ end
 
 class Shlerb #:nodoc: all
   TEMP_FILE = "_shlerb_temp"
-  
+
   def self.perform(infile)
     template_file = File.open(infile, 'r').read
     out = nil
@@ -38,7 +38,7 @@ class Shlerb #:nodoc: all
 
   private
     def self.herb(tmpl)
-      ERB.new(tmpl, nil, ">").result(binding)
+      ERB.new(tmpl, nil).result(binding)
     end
 
 end

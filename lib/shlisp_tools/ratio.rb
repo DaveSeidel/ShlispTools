@@ -13,6 +13,21 @@ module ShlispTools
     # rational form
     attr_reader :rat
 
+    def self.parse_ratio(txt)
+      parsed = {}
+      matches = /(\d+)[\/\:](\d+)/.match(txt)
+      if matches && matches.captures.length >= 2
+        parsed[:nume] = matches[1].to_i
+        parsed[:deno] = matches[2].to_i
+      end
+      parsed
+    end
+
+    def self.parse_new(txt)
+      r = parse_ratio(txt)
+      Ratio.new(r[:nume], r[:deno])
+    end
+
     def initialize(nume, deno, _mul=nil)
       @nume = nume
       @deno = deno

@@ -13,7 +13,11 @@ module ShlispTools
     def initialize(degrees=nil)
       @degrees = []
       if degrees && !degrees.empty?
-        degrees.each { |n| @degrees << n }
+        degrees.each do |n|
+          n = Ratio::parse_new(n) if n.is_a?(String)
+          raise "Bad scale degree: #{n.inspect}" unless n.is_a?(Ratio)
+          @degrees << n
+        end
         _sort
       end
     end
