@@ -1,3 +1,5 @@
+*NOTE: This project is no longer maintained, as I no longer have a Shnth.*
+
 # Shlerb and ShlispTools
 
 [![Gem Version](https://badge.fury.io/rb/shlisp_tools.png)](http://badge.fury.io/rb/shlisp_tools)
